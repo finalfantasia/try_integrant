@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Deps: aleph:0.4.5-alpha5">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/aleph/aleph/0.4.5-alpha5/aleph-0.4.5-alpha5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
