@@ -9,7 +9,7 @@
 ;; useful for adding default configuration dynamically
 (defmethod ig/prep-key ::instance
   [_ config]
-  (merge {:port 3000}
+  (merge {:port 8080}
          config))
 
 (defmethod ig/init-key ::instance

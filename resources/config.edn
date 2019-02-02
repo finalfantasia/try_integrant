@@ -4,4 +4,5 @@
                                :suffix ", coding time!\n"
                                :now #ig/ref :app.services.date-time/now}
 
- :app.web.aleph/instance {:handler #ig/ref :app.web.request-handler/now}}
+ :app.web.aleph/instance {:port 3000
+                          :handler #ig/ref :app.web.request-handler/now}}
