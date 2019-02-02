@@ -1,0 +1,7 @@
+{:app.services.date-time/now {}
+
+ :app.web.request-handler/now {:prefix "It's "
+                               :suffix ", coding time!\n"
+                               :now #ig/ref :app.services.date-time/now}
+
+ :app.web.aleph/instance {:handler #ig/ref :app.web.request-handler/now}}

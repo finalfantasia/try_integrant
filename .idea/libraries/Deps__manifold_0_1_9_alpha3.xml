@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: manifold:0.1.9-alpha3">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/manifold/manifold/0.1.9-alpha3/manifold-0.1.9-alpha3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
