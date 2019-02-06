@@ -1,3 +1,5 @@
 {:deps {integrant {:mvn/version "0.7.0"}
         integrant/repl {:mvn/version "0.3.1"}
-        aleph {:mvn/version "0.4.6"}}}
+        aleph {:mvn/version "0.4.6"}}
+
+ :aliases {:dev {:extra-paths ["dev"]}}}
