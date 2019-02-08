@@ -5,6 +5,4 @@
  :aliases {:dev {:extra-paths ["dev"]}
 
            :uberjar {:extra-deps
-                     {com.healthfinch/depstar
-                      {:git/url "https://github.com/healthfinch/depstar.git"
-                       :sha "2879672df7fd296855563c22dd9ba9de2022a0b4"}}}}}
+                     {seancorfield/depstar {:mvn/version "0.1.5"}}}}}
