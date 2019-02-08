@@ -1,8 +1,7 @@
-{:deps {integrant {:mvn/version "0.7.0"}
-        integrant/repl {:mvn/version "0.3.1"}
-        aleph {:mvn/version "0.4.6"}}
+{:deps {aleph {:mvn/version "0.4.6"}
+        integrant {:mvn/version "0.7.0"}}
 
- :aliases {:dev {:extra-paths ["dev"]}
+ :aliases {:dev {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}
+                 :extra-paths ["dev"]}
 
-           :uberjar {:extra-deps
-                     {seancorfield/depstar {:mvn/version "0.1.5"}}}}}
+           :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "0.1.5"}}}}}
