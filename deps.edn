@@ -2,4 +2,9 @@
         integrant/repl {:mvn/version "0.3.1"}
         aleph {:mvn/version "0.4.6"}}
 
- :aliases {:dev {:extra-paths ["dev"]}}}
+ :aliases {:dev {:extra-paths ["dev"]}
+
+           :uberjar {:extra-deps
+                     {com.healthfinch/depstar
+                      {:git/url "https://github.com/healthfinch/depstar.git"
+                       :sha "2879672df7fd296855563c22dd9ba9de2022a0b4"}}}}}
