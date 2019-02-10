@@ -35,14 +35,14 @@ and finally, halt the system:
 
 #### Building uberjar
 ```bash
-./dev/build-uberjar.sh
+./scripts/build-uberjar.sh
 
 ```
 
 #### Running uberjar
 
 ```bash
-./dev/run-uberjar.sh
+./scripts/run-uberjar.sh
 
 ```
 
