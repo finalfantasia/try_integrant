@@ -4,8 +4,11 @@
             [integrant.core :as ig]))
 
 
+(set! *warn-on-reflection* true)
+
 (defn -main [& _]
-  (let [config (-> "resources/config.edn"
+  (let [config (-> "config.edn"
+                   (clojure.java.io/resource)
                    (slurp)
                    (ig/read-string))]
     (ig/load-namespaces config)
