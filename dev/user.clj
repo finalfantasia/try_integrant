@@ -1,12 +1,15 @@
 (ns user
-  (:require [integrant.core :as ig]
-            [integrant.repl :as ig-repl]))
+  (:require
+    [clojure.java.io :as io]
+    [integrant.core :as ig]
+    [integrant.repl :as ig-repl]))
 
 
 (defn load-config []
-  (-> "resources/config.edn"
-    (slurp)
-    (ig/read-string)))
+  (-> "config.edn"
+      (io/resource)
+      (slurp)
+      (ig/read-string)))
 
 (ig-repl/set-prep! #(doto (load-config)
                       (ig/load-namespaces)
