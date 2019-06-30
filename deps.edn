@@ -6,4 +6,4 @@
  :aliases {:dev {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}
                  :extra-paths ["dev"]}
 
-           :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "0.1.5"}}}}}
+           :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "0.2.2"}}}}}
