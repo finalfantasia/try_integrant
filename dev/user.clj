@@ -2,7 +2,7 @@
   (:require
     [clojure.java.io :as io]
     [integrant.core :as ig]
-    [integrant.repl :as ig-repl]))
+    [integrant.repl :refer [go halt reset resume set-prep! suspend]]))
 
 
 (defn load-config []
@@ -11,9 +11,9 @@
       (slurp)
       (ig/read-string)))
 
-(ig-repl/set-prep! #(doto (load-config)
-                      (ig/load-namespaces)
-                      (ig/prep)))
+(set-prep! #(doto (load-config)
+              (ig/load-namespaces)
+              (ig/prep)))
 
 
 ;; user=> (ig-repl/go)
