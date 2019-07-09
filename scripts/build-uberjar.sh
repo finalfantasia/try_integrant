@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
 
-UBERJAR_NAME=try_integrant.jar
+UBERJAR_NAME=target/try_integrant.jar
 
-clojure -A:uberjar --main hf.depstar.uberjar ${UBERJAR_NAME}
+clojure -A:uberjar --target "${UBERJAR_NAME}"
