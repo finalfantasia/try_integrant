@@ -5,8 +5,7 @@
  :app.web.handlers/now {:prefix "It's "
                         :now #ig/ref :app.storage.date-time/now}
 
- :app.web.handlers/ping {:greeting "Pong! "
-                         :now #ig/ref :app.storage.date-time/now}
+ :app.web.handlers/ping {:now #ig/ref :app.storage.date-time/now}
 
  :app.web.handlers/ring-handler {:routes
                                  ["/api"
