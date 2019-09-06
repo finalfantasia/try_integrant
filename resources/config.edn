@@ -1,8 +1,16 @@
-{:app.services.date-time/now {}
+{;;; services (storage)
+ :app.storage.date-time/now {}
 
- :app.web.request-handler/now {:prefix "It's "
-                               :suffix ", coding time!\n"
-                               :now #ig/ref :app.services.date-time/now}
+ ;;; web (http request handlers)
+ :app.web.handlers/now {:prefix "It's "
+                        :now #ig/ref :app.storage.date-time/now}
+
+ :app.web.handlers/ping {:greeting "Pong! "
+                         :now #ig/ref :app.storage.date-time/now}
+
+ :app.web.handlers/ring-handler {:routes
+                                 [["/now" {:get #ig/ref :app.web.handlers/now}]
+                                  ["/ping" {:get #ig/ref :app.web.handlers/ping}]]}
 
  :app.web.aleph/instance {:port 3000
-                          :handler #ig/ref :app.web.request-handler/now}}
+                          :handler #ig/ref :app.web.handlers/ring-handler}}
