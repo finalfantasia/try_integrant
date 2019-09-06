@@ -1,33 +1,29 @@
 (ns user
   (:require
-    [clojure.java.io :as io]
-    [integrant.core :as ig]
-    [integrant.repl :refer [go halt reset resume set-prep! suspend]]))
+    [integrant.repl :refer [go halt reset resume set-prep! suspend]]
+    app.main))
 
 
-(defn load-config []
-  (-> "config.edn"
-      (io/resource)
-      (slurp)
-      (ig/read-string)))
+(set-prep! app.main/load-config)
 
-(set-prep! #(doto (load-config)
-              (ig/load-namespaces)
-              (ig/prep)))
+;; user=> (go)
+;; => :initiated
 
+;; user=> (suspend)
+;; => :suspended
 
-;; user=> (ig-repl/go)
-;; :initiated
+;; user=> (resume)
+;; => :resumed
 
-;; user=> (ig-repl/suspend)
-;; :suspended
+;; user=> (halt)
+;; => :halted
 
-;; user=> (ig-repl/resume)
+;; user=> (reset)
+;; =>
+;; :reloading (app.domain.message app.web.handlers app.storage.date-time
+;;             app.web.server app.main user)
 ;; :resumed
 
-;; user=> (ig-repl/halt)
-;; :halted
-
-;; TODO make `ig-repl/reset` work with aleph
+;; TODO make `integrant.repl/reset` work with aleph
 ;;   see https://github.com/ztellman/aleph/issues/365
 ;;       https://github.com/ztellman/aleph/pull/406
