@@ -8,19 +8,19 @@
 
 #### Starting a REPL with development configuration
 ```bash
-clj -A:dev
+clj -Anrepl
 ```
 
 and then start the system:
 ```clojure
-(ig-repl/go)
+user=> (go)
 ;; =>
 ;; :initiated
 ```
 
 make some changes and then reset the system:
 ```clojure
-(ig-repl/reset)
+user=> (reset)
 ;; =>
 ;; :reloading (app.domain.message app.web.handlers app.web.aleph app.storage.date-time user app.main)
 ;; :resumed
@@ -28,7 +28,7 @@ make some changes and then reset the system:
 
 and finally, halt the system:
 ```clojure
-(ig-repl/halt)
+user=> (halt)
 ;; =>
 ;; :halted
 ```
@@ -36,14 +36,12 @@ and finally, halt the system:
 #### Building uberjar
 ```bash
 ./scripts/build-uberjar.sh
-
 ```
 
 #### Running uberjar
 
 ```bash
 ./scripts/run-uberjar.sh
-
 ```
 
 #### How to Use
