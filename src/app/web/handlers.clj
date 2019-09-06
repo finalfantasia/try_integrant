@@ -1,6 +1,6 @@
 (ns app.web.handlers
   (:require
-    [app.domain.date-time :as dt]
+    [app.domain.message :as d]
     [integrant.core :as ig]
     [reitit.ring :as ring]))
 
@@ -9,14 +9,14 @@
   [_ {:keys [prefix now]}]
   (fn [_]
     {:status 200
-     :body (dt/message prefix now)
+     :body (d/message prefix now)
      :headers {"Content-Type" "text/plain"}}))
 
 (defmethod ig/init-key ::ping
   [_ {:keys [greeting now]}]
   (fn [_]
     {:status 200
-     :body (dt/message greeting now)
+     :body (d/message greeting now)
      :headers {"Content-Type" "text/plain"}}))
 
 (defmethod ig/init-key ::ring-handler

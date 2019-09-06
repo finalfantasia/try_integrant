@@ -1,5 +1,5 @@
 (ns app.main
-  "A simple web service that returns a message with current date-time"
+  "A simple web service example"
   (:require [clojure.tools.logging :as log]
             [integrant.core :as ig]))
 

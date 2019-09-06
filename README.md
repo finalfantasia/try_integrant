@@ -22,7 +22,7 @@ make some changes and then reset the system:
 ```clojure
 (ig-repl/reset)
 ;; =>
-;; :reloading (app.use-cases.date-time app.web.request-handler app.web.aleph app.services.date-time user app.main)
+;; :reloading (app.domain.message app.web.handlers app.web.aleph app.storage.date-time user app.main)
 ;; :resumed
 ```
 
