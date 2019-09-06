@@ -46,5 +46,7 @@ user=> (halt)
 
 #### How to Use
 ```bash
-curl localhost:3000
+curl localhost:3000/api/now
+
+curl localhost:3000/api/ping?feedback=pong
 ```
