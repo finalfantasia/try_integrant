@@ -1,4 +1,4 @@
-(ns app.web.aleph
+(ns app.web.server
   (:require
     [aleph.http :as aleph]
     [integrant.core :as ig])

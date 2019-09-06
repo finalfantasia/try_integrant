@@ -13,5 +13,5 @@
                                   [["/now" {:get #ig/ref :app.web.handlers/now}]
                                    ["/ping" {:get #ig/ref :app.web.handlers/ping}]]]}
 
- :app.web.aleph/instance {:port 3000
-                          :handler #ig/ref :app.web.handlers/ring-handler}}
+ :app.web.server/instance {:port 3000
+                           :handler #ig/ref :app.web.handlers/ring-handler}}
