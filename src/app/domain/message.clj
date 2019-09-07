@@ -3,4 +3,4 @@
 
 (defn message
   [prefix now]
-  (str prefix (now)))
+  (str prefix ": " (now)))

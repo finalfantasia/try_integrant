@@ -2,15 +2,14 @@
  :app.storage.date-time/now {}
 
  ;;; web (http request handlers)
- :app.web.handlers/now {:prefix "It's "
+ :app.web.handlers/now {:prefix "time now"
                         :now #ig/ref :app.storage.date-time/now}
 
  :app.web.handlers/ping {:now #ig/ref :app.storage.date-time/now}
 
- :app.web.handlers/ring-handler {:routes
-                                 ["/api"
-                                  [["/now" {:get #ig/ref :app.web.handlers/now}]
-                                   ["/ping" {:get #ig/ref :app.web.handlers/ping}]]]}
+ :app.web.handlers/add {:now #ig/ref :app.storage.date-time/now}
+
+ :app.web.handlers/ring-handler {}
 
  :app.web.server/instance {:port 3000
                            :handler #ig/ref :app.web.handlers/ring-handler}}
