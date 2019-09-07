@@ -44,9 +44,11 @@ user=> (halt)
 ./scripts/run-uberjar.sh
 ```
 
-#### How to Use
+#### How to Test
 ```bash
 curl localhost:3000/api/now
 
 curl localhost:3000/api/ping?feedback=pong
+
+curl localhost:3000/api/add?x=1&y=2
 ```
