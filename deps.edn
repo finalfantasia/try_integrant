@@ -7,9 +7,10 @@
 
  :paths ["src" "resources"]
 
- :aliases {:nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.22.2"}
-                                integrant/repl {:mvn/version "0.3.1"}}
-                   :extra-paths ["dev"]
+ :aliases {:dev {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}
+                 :extra-paths ["dev"]}
+
+           :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.22.2"}}
                    :main-opts ["--main" "nrepl.cmdline"
                                "--middleware" "[cider.nrepl/cider-middleware]"]}
 

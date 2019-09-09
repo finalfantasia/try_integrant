@@ -7,8 +7,13 @@
  - [Reloaded](https://github.com/stuartsierra/reloaded) 
 
 #### Starting a REPL with development configuration
+##### Clojure CLI REPL
 ```bash
-clj -Anrepl
+clj -Adev
+```
+##### nREPL
+```bash
+clj -Adev:nrepl
 ```
 
 and then start the system:
