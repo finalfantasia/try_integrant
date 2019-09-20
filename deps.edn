@@ -7,12 +7,13 @@
 
  :paths ["src" "resources"]
 
- :aliases {:dev {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}
-                 :extra-paths ["dev"]}
-
-           :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.22.3"}}
+ :aliases {:cider {:extra-deps {cider/cider-nrepl {:mvn/version "0.22.3"}}
                    :main-opts ["--main" "nrepl.cmdline"
                                "--middleware" "[cider.nrepl/cider-middleware]"]}
+
+           :dev {:extra-paths ["dev"]}
+
+           :ig {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}}
 
            :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.4"}}
                      :main-opts ["--main" "uberdeps.uberjar"]}}}

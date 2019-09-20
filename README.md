@@ -9,12 +9,12 @@
 #### Starting a REPL with development configuration
 ```bash
 # Clojure CLI REPL
-clj -Adev
+clj -A:dev:ig
 ```
 or
 ```bash
-# nREPL
-clj -Adev:nrepl
+# nREPL and CIDER
+clj -A:dev:ig:cider
 ```
 
 and then start the system:
