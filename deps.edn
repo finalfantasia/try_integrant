@@ -1,9 +1,11 @@
-{:deps {aleph {:mvn/version "0.4.6"}
+{:deps {org.clojure/tools.logging {:mvn/version "0.5.0"}
         integrant {:mvn/version "0.7.0"}
         metosin/reitit-core {:mvn/version "0.3.9"}
         metosin/reitit-middleware {:mvn/version "0.3.9"}
         metosin/reitit-ring {:mvn/version "0.3.9"}
-        metosin/reitit-spec {:mvn/version "0.3.9"}}
+        metosin/reitit-spec {:mvn/version "0.3.9"}
+        ring/ring-core {:mvn/version "1.7.1"}
+        ring/ring-jetty-adapter {:mvn/version "1.7.1"}}
 
  :paths ["src" "resources"]
 
