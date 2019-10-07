@@ -1,9 +1,11 @@
-{:deps {org.clojure/tools.logging {:mvn/version "0.5.0"}
+{:deps {expound {:mvn/version "0.7.2"}
         integrant {:mvn/version "0.7.0"}
+        metosin/muuntaja-cheshire {:mvn/version "0.6.5"}
         metosin/reitit-core {:mvn/version "0.3.9"}
         metosin/reitit-middleware {:mvn/version "0.3.9"}
         metosin/reitit-ring {:mvn/version "0.3.9"}
         metosin/reitit-spec {:mvn/version "0.3.9"}
+        org.clojure/tools.logging {:mvn/version "0.5.0"}
         ring/ring-core {:mvn/version "1.7.1"}
         ring/ring-jetty-adapter {:mvn/version "1.7.1"}}
 

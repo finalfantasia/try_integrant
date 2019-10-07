@@ -2,9 +2,13 @@
   (:require
     [app.domain.arithmetic]
     [app.domain.message]
+    [expound.alpha :as expound]
+    [muuntaja.core :as mc]
     [reitit.coercion.spec]
     [reitit.ring :as ring]
     [reitit.ring.coercion :as coercion]
+    [reitit.ring.middleware.exception :as exception]
+    [reitit.ring.middleware.muuntaja :as muuntaja]
     [reitit.ring.middleware.parameters :as parameters]))
 
 
@@ -30,6 +34,14 @@
        :body (app.domain.arithmetic/add x y now)
        :headers {"Content-Type" "text/plain"}})))
 
+(defn coercion-error-handler [status]
+  (let [printer (expound/custom-printer {:theme :figwheel-theme
+                                         :print-specs? false})
+        handler (exception/create-coercion-handler status)]
+    (fn [exception request]
+      (printer (-> exception (ex-data) (:problems)))
+      (handler exception request))))
+
 (defn make-routes-options
   [{:keys [now-handler ping-handler add-handler]}]
   {:routes
@@ -37,9 +49,18 @@
     [["/now" {:get now-handler}]
      ["/ping" {:get ping-handler}]
      ["/add" {:get {:parameters {:query {:x int? :y int?}}
+                    :responses {200 {:body string?}}
                     :handler add-handler}}]]]
 
    :options
    {:data {:coercion   reitit.coercion.spec/coercion
-           :middleware [parameters/parameters-middleware
-                        coercion/coerce-request-middleware]}}})
+           :middleware [muuntaja/format-middleware
+                        parameters/parameters-middleware
+                        (exception/create-exception-middleware
+                          (merge exception/default-handlers
+                                 {:reitit.coercion/request-coercion (coercion-error-handler 400)
+                                  :reitit.coercion/response-coercion (coercion-error-handler 500)}))
+                        coercion/coerce-request-middleware
+                        coercion/coerce-response-middleware]
+           :muuntaja mc/instance}}})
+
