@@ -19,5 +19,10 @@
 
            :ig {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}}
 
+           :test {:extra-deps {lambdaisland/kaocha {:mvn/version "0.0-554"}}
+                  :extra-paths ["test"]
+                  :main-opts ["--main" "kaocha.runner"
+                              "--reporter" "documentation"]}
+
            :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.4"}}
                      :main-opts ["--main" "uberdeps.uberjar"]}}}
