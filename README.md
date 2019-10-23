@@ -28,7 +28,7 @@ make some changes and then reset the system:
 ```clojure
 user=> (reset)
 ;; =>
-;; :reloading (app.domain.message app.web.handlers app.web.aleph app.storage.date-time user app.main)
+;; :reloading (domain.message web.handlers web.aleph storage.date-time user main)
 ;; :resumed
 ```
 

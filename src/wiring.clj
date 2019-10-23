@@ -1,7 +1,7 @@
-(ns app.wiring
+(ns wiring
   (:require
-    [app.storage.now :as storage]
-    [app.web.handlers :as handlers]
+    [storage.now :as storage]
+    [web.handlers :as handlers]
     [integrant.core :as ig]
     [reitit.ring :as reitit]
     [ring.adapter.jetty :as jetty]))

@@ -1,7 +1,7 @@
-(ns app.web.handlers
+(ns web.handlers
   (:require
-    [app.domain.arithmetic]
-    [app.domain.message]
+    [domain.arithmetic]
+    [domain.message]
     [expound.alpha :as expound]
     [muuntaja.core :as mc]
     [reitit.coercion.spec]
@@ -16,14 +16,14 @@
   [prefix now]
   (fn [_]
     {:status 200
-     :body (app.domain.message/message prefix now)
+     :body (domain.message/message prefix now)
      :headers {"Content-Type" "text/plain"}}))
 
 (defn ping-handler
   [now]
   (fn [context]
     {:status 200
-     :body (app.domain.message/message (get-in context [:params "feedback"]) now)
+     :body (domain.message/message (get-in context [:params "feedback"]) now)
      :headers {"Content-Type" "text/plain"}}))
 
 (defn add-handler
@@ -31,7 +31,7 @@
   (fn [context]
     (let [{{{:keys [x y]} :query} :parameters} context]
       {:status 200
-       :body (app.domain.arithmetic/add x y now)
+       :body (domain.arithmetic/add x y now)
        :headers {"Content-Type" "text/plain"}})))
 
 (defn coercion-error-handler [status]

@@ -1,15 +1,15 @@
 {;;; services (storage)
- :app.wiring/now-storage {}
+ :wiring/now-storage {}
 
  ;;; web (http request handlers)
- :app.wiring/now-handler {:prefix "time now"
-                          :now #ig/ref :app.wiring/now-storage}
+ :wiring/now-handler {:prefix "time now"
+                      :now #ig/ref :wiring/now-storage}
 
- :app.wiring/ping-handler {:now #ig/ref :app.wiring/now-storage}
+ :wiring/ping-handler {:now #ig/ref :wiring/now-storage}
 
- :app.wiring/add-handler {:now #ig/ref :app.wiring/now-storage}
+ :wiring/add-handler {:now #ig/ref :wiring/now-storage}
 
- :app.wiring/ring-handler {}
+ :wiring/ring-handler {}
 
- :app.wiring/server {:port 3000
-                     :handler #ig/ref :app.wiring/ring-handler}}
+ :wiring/server {:port 3000
+                 :handler #ig/ref :wiring/ring-handler}}

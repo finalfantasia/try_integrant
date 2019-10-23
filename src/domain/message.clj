@@ -1,4 +1,4 @@
-(ns app.domain.message)
+(ns domain.message)
 
 
 (defn message

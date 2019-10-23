@@ -1,5 +1,5 @@
-(ns app.domain.arithmetic-test
-  (:require [app.domain.arithmetic :as sut]
+(ns domain.arithmetic-test
+  (:require [domain.arithmetic :as sut]
             [clojure.test :refer [deftest is testing]])
   (:import (java.time Instant)))
 

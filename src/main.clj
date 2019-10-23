@@ -1,4 +1,4 @@
-(ns app.main
+(ns main
   "A simple web service example"
   (:require [clojure.java.io :as io]
             [clojure.tools.logging :as log]

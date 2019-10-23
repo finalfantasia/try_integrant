@@ -1,4 +1,4 @@
-(ns app.storage.now
+(ns storage.now
   (:import (java.time Instant)))
 
 

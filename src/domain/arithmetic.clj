@@ -1,4 +1,4 @@
-(ns app.domain.arithmetic)
+(ns domain.arithmetic)
 
 
 (defn add

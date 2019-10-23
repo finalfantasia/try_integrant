@@ -1,10 +1,10 @@
 (ns user
   (:require
     [integrant.repl :refer [go halt reset resume set-prep! suspend]]
-    app.main))
+    main))
 
 
-(set-prep! app.main/load-config)
+(set-prep! main/load-config)
 
 ;; user=> (go)
 ;; => :initiated
@@ -20,8 +20,8 @@
 
 ;; user=> (reset)
 ;; =>
-;; :reloading (app.domain.message app.web.handlers app.storage.date-time
-;;             app.web.server app.main user)
+;; :reloading (domain.message web.handlers storage.date-time
+;;             web.server main user)
 ;; :resumed
 
 ;; TODO make `integrant.repl/reset` work with aleph
