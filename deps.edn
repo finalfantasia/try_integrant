@@ -1,13 +1,13 @@
-{:deps {expound {:mvn/version "0.7.2"}
-        integrant {:mvn/version "0.7.0"}
-        metosin/muuntaja-cheshire {:mvn/version "0.6.5"}
+{:deps {expound {:mvn/version "0.8.4"}
+        integrant {:mvn/version "0.8.0"}
+        metosin/muuntaja-cheshire {:mvn/version "0.6.6"}
         metosin/reitit-core {:mvn/version "0.3.10"}
         metosin/reitit-middleware {:mvn/version "0.3.10"}
         metosin/reitit-ring {:mvn/version "0.3.10"}
         metosin/reitit-spec {:mvn/version "0.3.10"}
         org.clojure/tools.logging {:mvn/version "0.5.0"}
-        ring/ring-core {:mvn/version "1.7.1"}
-        ring/ring-jetty-adapter {:mvn/version "1.7.1"}}
+        ring/ring-core {:mvn/version "1.8.0"}
+        ring/ring-jetty-adapter {:mvn/version "1.8.0"}}
 
  :paths ["src" "resources"]
 
@@ -19,10 +19,10 @@
 
            :ig {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}}
 
-           :test {:extra-deps {lambdaisland/kaocha {:mvn/version "0.0-554"}}
+           :test {:extra-deps {lambdaisland/kaocha {:mvn/version "0.0-565"}}
                   :extra-paths ["test"]
                   :main-opts ["--main" "kaocha.runner"
                               "--reporter" "documentation"]}
 
-           :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.5"}}
+           :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.7"}}
                      :main-opts ["--main" "uberdeps.uberjar"]}}}
