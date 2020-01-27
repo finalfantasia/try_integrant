@@ -1,6 +1,6 @@
-#! /usr/bin/env bash
+#! /usr/bin/env sh
 
-UBERJAR_NAME=target/try_integrant.jar
-MAIN_NAMESPACE=main
+uberjar_name=target/try_integrant.jar
+main_namespace=main
 
-java --class-path ${UBERJAR_NAME} clojure.main --main ${MAIN_NAMESPACE}
+java --class-path ${uberjar_name} clojure.main --main ${main_namespace}
