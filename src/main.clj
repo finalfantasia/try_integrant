@@ -8,7 +8,7 @@
 (set! *warn-on-reflection* true)
 
 (defn load-config []
-  (-> "config.edn"
+  (-> "system.edn"
       (io/resource)
       (slurp)
       (ig/read-string)
