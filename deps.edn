@@ -1,10 +1,11 @@
 {:deps {expound {:mvn/version "0.8.4"}
         integrant {:mvn/version "0.8.0"}
         metosin/muuntaja-cheshire {:mvn/version "0.6.6"}
-        metosin/reitit-core {:mvn/version "0.3.10"}
-        metosin/reitit-middleware {:mvn/version "0.3.10"}
-        metosin/reitit-ring {:mvn/version "0.3.10"}
-        metosin/reitit-spec {:mvn/version "0.3.10"}
+        metosin/reitit-core {:mvn/version "0.4.2"}
+        metosin/reitit-middleware {:mvn/version "0.4.2"
+                                   :exclusions [metosin/muuntaja]}
+        metosin/reitit-ring {:mvn/version "0.4.2"}
+        metosin/reitit-spec {:mvn/version "0.4.2"}
         org.clojure/tools.logging {:mvn/version "0.5.0"}
         ring/ring-core {:mvn/version "1.8.0"}
         ring/ring-jetty-adapter {:mvn/version "1.8.0"}}
