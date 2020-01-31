@@ -1,9 +1,7 @@
 {:deps {expound {:mvn/version "0.8.4"}
         integrant {:mvn/version "0.8.0"}
-        metosin/muuntaja {:mvn/version "0.6.6"}
         metosin/reitit-core {:mvn/version "0.4.2"}
-        metosin/reitit-middleware {:mvn/version "0.4.2"
-                                   :exclusions [metosin/muuntaja]}
+        metosin/reitit-middleware {:mvn/version "0.4.2"}
         metosin/reitit-ring {:mvn/version "0.4.2"}
         metosin/reitit-spec {:mvn/version "0.4.2"}
         org.clojure/tools.logging {:mvn/version "0.5.0"}
