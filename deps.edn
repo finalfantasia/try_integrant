@@ -1,6 +1,6 @@
 {:deps {expound {:mvn/version "0.8.4"}
         integrant {:mvn/version "0.8.0"}
-        metosin/muuntaja-cheshire {:mvn/version "0.6.6"}
+        metosin/muuntaja {:mvn/version "0.6.6"}
         metosin/reitit-core {:mvn/version "0.4.2"}
         metosin/reitit-middleware {:mvn/version "0.4.2"
                                    :exclusions [metosin/muuntaja]}
@@ -12,18 +12,19 @@
 
  :paths ["src" "resources"]
 
- :aliases {:cider {:extra-deps {cider/cider-nrepl {:mvn/version "0.22.4"}}
-                   :main-opts ["--main" "nrepl.cmdline"
-                               "--middleware" "[cider.nrepl/cider-middleware]"]}
-
-           :dev {:extra-paths ["dev"]}
+ :aliases {:dev {:extra-paths ["dev"]}
 
            :ig {:extra-deps {integrant/repl {:mvn/version "0.3.1"}}}
 
-           :test {:extra-deps {lambdaisland/kaocha {:mvn/version "0.0-565"}}
+           :nrepl {:extra-deps {nrepl {:mvn/version "0.6.0"}
+                                cider/cider-nrepl {:mvn/version "0.23.0"}}
+                   :main-opts ["--main" "nrepl.cmdline"
+                               "--middleware" "[cider.nrepl/cider-middleware]"]}
+           :test {:extra-deps {lambdaisland/kaocha {:mvn/version "0.0-581"}}
                   :extra-paths ["test"]
                   :main-opts ["--main" "kaocha.runner"
                               "--reporter" "documentation"]}
 
-           :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.7"}}
+           :uberjar {:deps {uberdeps {:mvn/version "0.1.8"}}
                      :main-opts ["--main" "uberdeps.uberjar"]}}}
+

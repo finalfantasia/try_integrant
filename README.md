@@ -13,8 +13,8 @@ clj -A:dev:ig
 ```
 or
 ```bash
-# nREPL and CIDER
-clj -A:dev:ig:cider
+# nREPL
+clj -A:dev:ig:nrepl
 ```
 
 and then start the system:
