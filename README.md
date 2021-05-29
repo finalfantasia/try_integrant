@@ -6,15 +6,10 @@
  - [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
  - [Reloaded](https://github.com/stuartsierra/reloaded) 
 
-#### Starting a REPL with development configuration
-```bash
-# Clojure CLI REPL
-clj -A:dev:ig
-```
-or
-```bash
-# nREPL
-clj -A:dev:ig:nrepl
+#### Starting a REPL with development dependencies/paths
+```sh
+# Clojure REPL
+clj -A:dev
 ```
 
 and then start the system:
@@ -40,21 +35,21 @@ user=> (halt)
 ```
 
 #### Building uberjar
-```bash
-./scripts/build-uberjar.sh
+```sh
+./build_uberjar.sh
 ```
 
-#### Running uberjar
+#### Running app
 
-```bash
-./scripts/run-uberjar.sh
+```sh
+./run_app.sh
 ```
 
 #### How to Test
-```bash
-curl localhost:3000/api/now
+```sh
+curl 'localhost:3000/api/now'
 
-curl localhost:3000/api/ping?feedback=pong
+curl 'localhost:3000/api/ping?feedback=pong'
 
-curl localhost:3000/api/add?x=1&y=2
+curl 'localhost:3000/api/add?x=1&y=2'
 ```
